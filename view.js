@@ -1,6 +1,6 @@
 const figlet = require("figlet")
 const chalk = require("chalk")
-//const inquirer = require("inquirer")
+const inquirer = require("inquirer")
 
 function getTitle(){
     return chalk.red(
@@ -27,6 +27,32 @@ function getTable(model){
     ]
 }
 
+function listForm(){
+    const message = "Select action:"
+    const choices = ["Add City", "Update City", "Delete City"]
+    return inquirer.prompt([
+        {
+            name: "action",
+            type: "list",
+            message: message,
+            choices: choices
+        }
+    ])
+}
+
+function inputForm(){
+    const location = 0
+    const message = "Location?"
+    return inquirer.prompt([
+        {   
+            name: "location",
+            type: "input",
+            message: message,
+            default: location,
+        }
+    ])
+}
+
 function view(model){
     return {
         title: getTitle(),
@@ -36,4 +62,6 @@ function view(model){
 
 module.exports = {
     view,
+    listForm,
+    inputForm
 }
