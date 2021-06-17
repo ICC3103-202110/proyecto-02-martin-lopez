@@ -28,6 +28,7 @@ function getTable(model){
 }
 
 function listForm(){
+    const input = 0
     const message = "Select action:"
     const choices = ["Add City", "Update City", "Delete City"]
     return inquirer.prompt([
@@ -35,13 +36,14 @@ function listForm(){
             name: "action",
             type: "list",
             message: message,
+            defaul: input,
             choices: choices
         }
     ])
 }
 
-function inputForm(){
-    const location = 0
+function inputForm(model){
+    const location = model
     const message = "Location?"
     return inquirer.prompt([
         {   

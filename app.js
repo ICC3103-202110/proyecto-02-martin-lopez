@@ -2,17 +2,18 @@ const {printTable} = require("console-table-printer")
 const {listForm, inputForm} = require("./view")
 
 
-async function app(state, update, view){
+async function app(state, addCity, view){
     while (true){
         const {model, currentView} = state
         const {title, table} = currentView
         console.clear()
         console.log(title)
         printTable(table)
-        const action = await listForm()
+        const {action} = await listForm()
+        console.log(action)
         if (action === "Add City"){
-            const location = await inputForm()
-            const updatedModel = update(location, model)
+            const {location} = await inputForm()
+            const updatedModel = addCity(location, model)
             state = {
                 ...state,
                 model: updatedModel,

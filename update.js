@@ -1,6 +1,6 @@
 
 
-function update(location, model){
+function addCity(location, model){
     const newLocation = location
     const newTemp = Math.floor(Math.random() * 10)
     const newMax = Math.floor(Math.random() * 10)
@@ -16,5 +16,5 @@ function update(location, model){
 
 
 module.exports = {
-    update
+    addCity
 }
