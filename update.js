@@ -1,8 +1,8 @@
 function addCity(location, model){
     const newLocation = location
-    const newTemp = Math.floor(Math.random() * 10)
-    const newMax = Math.floor(Math.random() * 10)
-    const newMin = Math.floor(Math.random() * 10)
+    const newTemp = Math.floor(Math.random() * 100)
+    const newMax = Math.floor(Math.random() * 100)
+    const newMin = Math.floor(Math.random() * 100)
     return {
         ...model,
         name: newLocation, 
@@ -13,9 +13,9 @@ function addCity(location, model){
 }
 function updateCity(model){
     const{name} = model
-    const newTemp = Math.floor(Math.random() * 10)
-    const newMax = Math.floor(Math.random() * 10)
-    const newMin = Math.floor(Math.random() * 10)
+    const newTemp = Math.floor(Math.random() * 100)
+    const newMax = Math.floor(Math.random() * 100)
+    const newMin = Math.floor(Math.random() * 100)
     return {
         ...model,
         name: name, 
