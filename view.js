@@ -55,6 +55,7 @@ function inputForm(model){
     ])
 }
 
+
 function view(model){
     return {
         title: getTitle(),
